@@ -18,15 +18,8 @@ class EdgeImpulseClassifier {
         });
     }
 
-    getProjectInfo() {
-        if (!classifierInitialized) throw new Error('Module is not initialized');
-        return Module.get_project();
-    }
-
     classify(rawData, debug = false) {
         if (!classifierInitialized) throw new Error('Module is not initialized');
-
-        let props = Module.get_properties();
 
         const obj = this._arrayToHeap(rawData);
         let ret = Module.run_classifier(obj.buffer.byteOffset, rawData.length, debug);
@@ -42,14 +35,10 @@ class EdgeImpulseClassifier {
             results: []
         };
 
+
         for (let cx = 0; cx < ret.size(); cx++) {
             let c = ret.get(cx);
-            if (props.model_type === 'object_detection' || props.model_type === 'constrained_object_detection') {
-                jsResult.results.push({ label: c.label, value: c.value, x: c.x, y: c.y, width: c.width, height: c.height });
-            }
-            else {
-                jsResult.results.push({ label: c.label, value: c.value });
-            }
+            jsResult.results.push({ label: c.label, value: c.value, x: c.x, y: c.y, width: c.width, height: c.height });
             c.delete();
         }
 
