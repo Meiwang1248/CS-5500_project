@@ -20,5 +20,5 @@ Handler.extensions_map={
 
 httpd = socketserver.TCPServer(("", PORT), Handler)
 
-print("serving at port", PORT)
+print("Server is currently serving at port", PORT)
 httpd.serve_forever()
