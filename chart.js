@@ -1,4 +1,3 @@
-
 window.onload = function () {
 
 //Better to construct options first and then pass it as a parameter
