@@ -6,6 +6,11 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
+<!--分为以下几部分：-->
+<!--1.把输入的当前数字render出来-->
+<!--2.该数字和timestamp进入数据库-->
+<!--3.显示当前数字的占比-->
+<!--4.显示平均值（以心情代表，1-3为😄，4-6为😐，7-10为😢）-->
 <h1 id = "h_one">#number</h1>
 
 <input id = "input_field">
@@ -13,9 +18,11 @@
     add features
 </button>
 <p id = "idiot">hello dear</p>
+
 <script type="module" src="RenderInputNumber.js"></script>
 <script src="edge-impulse-standalone.js"></script>
 <script src="run-impulse.js"></script>
-
+<script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
 </body>
 </html>
