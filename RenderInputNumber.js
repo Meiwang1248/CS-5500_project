@@ -70,6 +70,16 @@ const getValueInput = () => {
         document.getElementById("h_one").innerHTML = labels[idx];
     // })();
     reLoadWindow();
+
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", "http://localhost:8083/mongodb");
+
+    xhr.setRequestHeader("Accept", "application/json");
+    xhr.setRequestHeader("Content-Type", "application/json");
+
+    xhr.onload = () => console.log(xhr.responseText);
+
+    xhr.send(JSON.stringify(obj.results));
 }
 const add_feature_button = $("#add_features_button");
 add_feature_button.click(getValueInput);
