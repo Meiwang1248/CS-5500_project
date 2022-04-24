@@ -4,15 +4,19 @@
     <meta charset="utf-8">
     <title>Browser inference demo</title>
     <style>
-body {background-color:#F0F8FF;}
-h1   {color:#CD5C5C;
-      text-align:center;
-      font-weight:900;}
-div  {text-align:center;}
-input{text-align:right;
-      background-color:#FFEBCD;}
-button{text-align:right;}
-</style>
+        body {background-color:#F0F8FF;}
+        h1   {color:#CD5C5C;
+            text-align:center;
+            font-weight:900;}
+        div  {text-align:left;}
+        input{text-align:left;
+            background-color:#FFEBCD;}
+        button{text-align:left;
+            font-weight:bold;}
+        button:hover {
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+        }
+    </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
@@ -29,35 +33,10 @@ button{text-align:right;}
 </button>
 <!--<p id = "idiot">hello dear</p>-->
 <div id="chartContainer" style="height: 300px; width: 50%;"></div>
-<div id="here_table"></div>
-<table>
-    <tr>
-        <th>Number Predicted</th>
-        <th>Possibilities</th>
-    </tr>
-    <tr>
-        <td>One</td>
-        <td>-</td>
-    </tr>
-    <tr>
-        <td>Two</td>
-        <td>-</td>
-    </tr>
-    <tr>
-        <td>Three</td>
-        <td>-</td>
-    </tr>
-    <tr>
-        <td>Four</td>
-        <td>-</td>
-    </tr>
-</table>
 <script type="module" src="RenderInputNumber.js"></script>
 <script src="edge-impulse-standalone.js"></script>
 <script src="run-impulse.js"></script>
-<!--<script src="NumberList.js.js"></script>-->
 <script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
-
 </body>
 </html>
