@@ -16,7 +16,7 @@ const getValueInput = () => {
         values[i] = obj.results[i].value;
     }
     let idx = -1;
-    max = -1;//无语
+    max = -1;
     for (let i = 0; i < 12; i++) {
         if (values[i] > max) {
             // console.log()
